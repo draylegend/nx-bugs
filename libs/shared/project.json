@@ -2,8 +2,25 @@
   "projectType": "library",
   "root": "libs/shared",
   "sourceRoot": "libs/shared/src",
-  "prefix": "app",
+  "prefix": "nb",
   "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/shared"],
+      "options": {
+        "project": "libs/shared/ng-package.json",
+        "tailwindConfig": "libs/shared/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/shared"],

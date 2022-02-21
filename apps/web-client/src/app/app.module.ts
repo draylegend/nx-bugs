@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SharedModule } from '@nx-failed-to-load-plugin-nrwl-nx-declared-in-eslint-json/shared';
-
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule, SharedModule],
-  providers: [],
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot([
+      {
+        path: 'users',
+        loadChildren: () =>
+          import('@nx-bugs/user-feature').then((m) => m.UserFeatureModule),
+      },
+      { path: '**', redirectTo: 'users' },
+    ]),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

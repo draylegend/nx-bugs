@@ -1,0 +1,43 @@
+{
+  "projectType": "library",
+  "root": "libs/user/feature",
+  "sourceRoot": "libs/user/feature/src",
+  "prefix": "nb",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/user/feature"],
+      "options": {
+        "project": "libs/user/feature/ng-package.json",
+        "tailwindConfig": "libs/user/feature/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/user/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/user/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/user/feature"],
+      "options": {
+        "jestConfig": "libs/user/feature/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/user/feature/src/**/*.ts",
+          "libs/user/feature/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:user type:feature"]
+}

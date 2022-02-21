@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/web-client",
   "sourceRoot": "apps/web-client/src",
-  "prefix": "app",
+  "prefix": "nb",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -90,5 +90,5 @@
       }
     }
   },
-  "tags": []
+  "tags": ["scope:apps type:app"]
 }

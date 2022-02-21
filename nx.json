@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-failed-to-load-plugin-nrwl-nx-declared-in-eslint-json",
+  "npmScope": "nx-bugs",
   "affected": {
     "defaultBase": "main"
   },

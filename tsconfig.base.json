@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-failed-to-load-plugin-nrwl-nx-declared-in-eslint-json/shared": [
-        "libs/shared/src/index.ts"
-      ]
+      "@nx-bugs/shared": ["libs/shared/src/index.ts"],
+      "@nx-bugs/user-feature": ["libs/user/feature/src/index.ts"],
+      "@nx-bugs/user/domain": ["libs/user/domain/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

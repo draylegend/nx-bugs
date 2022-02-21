@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'nb-root',
+  template: `
+    <a routerLink="users">Users</a>
+    <main><router-outlet></router-outlet></main>
+  `,
 })
-export class AppComponent {
-  title = 'web-client';
-}
+export class AppComponent {}
